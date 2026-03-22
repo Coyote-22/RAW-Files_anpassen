@@ -1,0 +1,2403 @@
+/* ================================================
+   CSS VARIABLES
+   ================================================ */
+:root {
+    --main-menu-background-color:         #000000;
+    --main-menu-text-color:               #ffffff;
+    --main-menu-text-color-hover:         #003366;
+    --main-submenu-background-color:      #767779;
+    --main-submenu-text-color:            #ffffff;
+    --table-header-bg:        #000000;
+    --table-header-color:     #ffffff;
+    --table-row-odd-bg:       #ffffff;
+    --table-row-even-bg:      #f0f0f0;
+    --table-row-color:        #000000;
+    --table-border-color:     #dedede;
+    --table-bg:               #ffffff;
+    --main-table-background-head:      #000000;
+    --main-table-background-head-text: #ffffff;
+    /* ↓ NEU – fehlende Variablen */
+    --main-table-odd:         #ffffff;
+    --main-table-even:        #f0f0f0;
+}
+
+/* ================================================
+   ALLE TABLESORTER – Scroll-Wrapper
+   ================================================ */
+.table-scroll-wrapper {
+    overflow-x: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* ================================================
+   ALLE TABLESORTER – sticky Header per CSS
+   ================================================ */
+.tablesorter thead {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 5 !important;
+}
+
+.tablesorter thead th {
+    text-shadow: none !important;
+    position: sticky !important;
+    top: 0 !important;
+}
+
+/* ================================================
+   ALLE TABLESORTER – kein text-shadow im Header
+   ================================================ */
+.tablesorter thead th {
+    text-shadow: none !important;
+}
+
+
+
+
+
+/* ================================================
+   SEITENBREITE – alle Hauptseiten auf 1200px
+   ================================================ */
+body > div[style*="width:99%"],
+body > div[style*="width:95%"] {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ================================================
+   TEAMSSTATS – Spalten 1+2 sticky (# und Team)
+   ================================================ */
+
+/* Erste Spalte: # */
+.STHSPHPTeamsStat_Table thead tr th:nth-child(1),
+.STHSPHPTeamsStat_Table tbody tr td:nth-child(1) {
+    position: sticky !important;
+    left: 0 !important;
+    z-index: 2 !important;
+    background-color: inherit !important;
+    min-width: 10px !important;
+}
+
+/* Zweite Spalte: Team-Name */
+.STHSPHPTeamsStat_Table thead tr th:nth-child(2),
+.STHSPHPTeamsStat_Table tbody tr td:nth-child(2) {
+    position: sticky !important;
+    left: 10px !important;   /* ← Breite der #-Spalte (STHSW10 = 10px) */
+    z-index: 2 !important;
+    background-color: inherit !important;
+    min-width: 200px !important;
+}
+
+/* Header-Zeile 1: Overall/Home/Visitor Gruppierung */
+.STHSPHPTeamsStat_Table thead tr:nth-child(1) th {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3 !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* Header-Zeile 2: GP, W, L... */
+.STHSPHPTeamsStat_Table thead tr:nth-child(2) th {
+    position: sticky !important;
+    top: 24px !important;    /* ← Höhe der ersten Header-Zeile */
+    z-index: 3 !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* Ecken oben-links: sticky in beide Richtungen */
+.STHSPHPTeamsStat_Table thead tr:nth-child(1) th:nth-child(1),
+.STHSPHPTeamsStat_Table thead tr:nth-child(2) th:nth-child(1),
+.STHSPHPTeamsStat_Table thead tr:nth-child(2) th:nth-child(2) {
+    z-index: 4 !important;
+}
+
+
+/* ================================================
+   TEAMSSTATS – fixierte Kopfzeilen beim Scrollen
+   ================================================ */
+
+/* Erste UND zweite Header-Zeile fixieren (Overall/Home + Spaltentitel) */
+.STHSPHPTeamsStat_Table thead tr:nth-child(1) th,
+.STHSPHPTeamsStat_Table thead tr:nth-child(2) th {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3 !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* Ecke oben-links: sticky in beide Richtungen */
+.STHSPHPTeamsStat_Table thead tr:nth-child(1) th:first-child,
+.STHSPHPTeamsStat_Table thead tr:nth-child(2) th:first-child {
+    z-index: 4 !important;
+}
+
+/* ================================================
+   FILTER-HINTERGRUND & ÜBERSCHRIFT
+   ================================================ */
+
+/* FilterTip – weißer Hintergrund */
+.FilterTipMain {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+.FilterTipMain tbody td {
+    background-color: #ffffff !important;
+}
+
+/* FilterTip – Überschrift weiß */
+.FilterTipMain .FilterTip th,
+.FilterTipMain .FilterTip thead td {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+.STHSPHPPlayerStat_Main,
+.STHSPHPGoalieStat_Main,
+.STHSPHPPowerRanking_Main,
+.STHSPHPSchedule_Main,
+.STHSPHPLeagueInformation_Main,
+.STHSPHPIndividualLeaders_Main,
+.STHSPHPEntryDraft_Main,
+.STHSPHPTeamsAndGM_Main,
+.STHSPHPFinance_Main,
+.STHSPHPCoaches_Main,
+.STHSPHPTransaction_Main,
+.STHSPHPWaivers_Main,
+.STHSPHPLeaderboard_Main {
+    background-color: #ffffff !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ================================================
+   SEITEN-HINTERGRUND
+   ================================================ */
+html, body {
+    background-color: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#cssmenu,
+.teamlogos-bar,
+.STHSIndex_Main,
+table.STHSIndex_Main,
+.STHSWarning,
+.footer {
+    background-color: #ffffff !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+.STHSPHPTeamStat_Main {
+    background-color: #ffffff !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow: visible !important;   /* ← behalten, da Dropdowns etc. sichtbar sein müssen */
+    box-sizing: border-box !important;
+    width: 100% !important;         /* ← NEU hinzufügen */
+}
+
+/* Nur EINEN dieser Blöcke behalten: */
+.STHSPHPTeamStat_Main > div[style*="border-radius"] {
+    max-width: 1200px !important;   /* ← wichtig: bleibt erhalten */
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;   /* ← einheitlich */
+}
+
+/* ================================================
+   ROSTER / PLAYERS INFO / TEAM STATS
+   Sticky Header – funktioniert nur wenn Wrapper
+   BEIDE overflow:auto hat (x + y)!
+   ================================================ */
+
+/* tabmain-divs: KEIN overflow – Wrapper macht das */
+#tabmain1,
+#tabmain3,
+#tabmain5 {
+    overflow: visible !important;
+}
+
+/* Der Wrapper scrollt in beiden Richtungen */
+.tabmain-scroll-wrapper {
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+    max-height: 75vh !important;      /* Höhe anpassen – 75% des Viewports */
+    width: 100% !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch !important;
+    position: relative !important;
+}
+
+/* CSS Sticky Header – greift weil Scroll im Wrapper passiert */
+.tabmain-scroll-wrapper thead th {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 5 !important;
+    background-color: var(--table-header-bg) !important;
+    color: var(--table-header-color) !important;
+    text-shadow: none !important;
+}
+
+/* Tabellen mit 2 Header-Zeilen: 2. Zeile tiefer sticky */
+.tabmain-scroll-wrapper thead tr:nth-child(2) th {
+    top: 28px !important;    /* Höhe der 1. Header-Zeile anpassen */
+    z-index: 5 !important;
+}
+
+/* STHSPHPTeamStat_Main und Wrapper: kein overflow-clip */
+.STHSPHPTeamStat_Main {
+    overflow: visible !important;
+}
+
+.STHSPHPTeamStat_Main > div[style*="border-radius"] {
+    overflow: visible !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Klon-Tabelle (falls noch vorhanden): verstecken */
+table.sticky-header-clone {
+    display: none !important;
+}
+
+/* ================================================
+   ROSTER / PLAYERS INFO / TEAM STATS
+   Sticky Header FIX für breite Tabellen
+   (Tabellen die horizontal scrollen müssen)
+   ================================================ */
+
+/*
+   KERNPROBLEM: position:sticky auf thead th funktioniert nur,
+   wenn der VERTIKALE Scroll im selben Container passiert.
+   
+   Lösung: Tabellen-Wrapper mit BEIDEN overflow:auto + max-height
+   → dann scrollt die Tabelle sowohl horizontal ALS AUCH vertikal
+     innerhalb des Wrappers → sticky header klappt!
+*/
+
+/* Wrapper für alle breiten Tabellen in ProTeam */
+.tabmain-scroll-wrapper {
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+    max-height: 70vh !important;       /* ← Höhe anpassen nach Wunsch */
+    width: 100% !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* Tabellen im Wrapper: thead sticky */
+.tabmain-scroll-wrapper thead th,
+.tabmain-scroll-wrapper thead tr th {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3 !important;
+    background-color: var(--table-header-bg) !important;
+    color: var(--table-header-color) !important;
+    text-shadow: none !important;
+}
+
+/* Für Tabellen mit 2 Header-Zeilen (z.B. TeamsStatSub): 2. Zeile tiefer */
+.tabmain-scroll-wrapper thead tr:nth-child(2) th {
+    top: 30px !important;  /* Höhe der ersten Header-Zeile */
+    z-index: 3 !important;
+}
+
+
+.STHSPHPTeamStat_Main > div[style*="border-radius"] {
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+/* ================================================
+   HAUPTMENÜ #cssmenu
+   ================================================ */
+#cssmenu {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+    font-family: Montserrat, sans-serif !important;
+}
+
+#cssmenu > ul {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    background: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: 0 !important;
+}
+
+#cssmenu > ul > li {
+    display: inline-flex !important;
+    float: none !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+    margin: 0 !important;
+}
+
+#cssmenu > ul > li > a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 64px !important;
+    padding: 0 16px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    color: #ffffff !important;
+    background: #000000 !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+    line-height: 1 !important;
+}
+
+#cssmenu > ul > li > a:hover {
+    color: #003366 !important;
+    background: #000000 !important;
+}
+
+#cssmenu > ul > li > a.menu-home {
+    font-size: 38px !important;
+    font-weight: 700 !important;
+    font-style: italic !important;
+    letter-spacing: 2px !important;
+    padding: 0 16px !important;
+    white-space: nowrap !important;
+}
+
+#cssmenu > ul > li > a.MenuAfterImage,
+#cssmenu > ul > li:nth-child(8) > a {
+    white-space: normal !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    padding: 0 16px !important;
+    width: auto !important;
+    font-size: 12px !important;
+}
+
+#cssmenu > ul > li.has-sub > a:after,
+#cssmenu > ul > li.has-sub > a:before,
+#cssmenu ul ul li.has-sub > a:after,
+#cssmenu ul ul li.has-sub > a:before {
+    display: none !important;
+    content: none !important;
+}
+
+#cssmenu > ul > li.MenuImage {
+    height: 64px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0 6px !important;
+    flex-shrink: 0 !important;
+}
+
+.MenuImageDiv,
+#STHSImageHeader {
+    height: 64px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.MenuImageDiv img,
+#STHSImageHeader img {
+    height: 55px !important;
+    width: auto !important;
+    display: block !important;
+    margin: 0 !important;
+    margin-top: 30px !important;
+    padding: 0 !important;
+}
+
+/* ================================================
+   DROPDOWN - 1. Ebene
+   ================================================ */
+#cssmenu ul ul {
+    position: absolute !important;
+    display: none !important;
+    top: 100% !important;
+    left: 0 !important;
+    min-width: 250px !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: var(--main-submenu-background-color) !important;
+    z-index: 1001 !important;
+    border-radius: 0 0 6px 6px !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+    text-align: left !important;
+}
+
+#cssmenu ul li:hover > ul,
+#cssmenu ul li:focus-within > ul {
+    display: block !important;
+}
+
+#cssmenu ul ul li {
+    display: block !important;
+    height: auto !important;
+    width: 100% !important;
+    float: none !important;
+}
+
+#cssmenu ul ul li a {
+    display: block !important;
+    width: 100% !important;
+    padding: 11px 15px !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    white-space: nowrap !important;
+    background: var(--main-submenu-background-color) !important;
+    color: var(--main-submenu-text-color) !important;
+    border-bottom: 1px solid rgba(150,150,150,0.15) !important;
+    text-align: left !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    line-height: 1.3 !important;
+    text-transform: none !important;
+}
+
+#cssmenu ul ul li a:hover,
+#cssmenu ul ul li:hover > a,
+#cssmenu ul ul li.active > a,
+#cssmenu ul ul li a:focus {
+    background: #003366 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* ================================================
+   DROPDOWN - 2. Ebene (Fly-out)
+   ================================================ */
+#cssmenu ul ul ul {
+    position: absolute !important;
+    display: none !important;
+    left: 100% !important;
+    top: 0 !important;
+    min-width: 220px !important;
+    z-index: 1002 !important;
+    background: var(--main-submenu-background-color) !important;
+}
+
+#cssmenu ul ul li:hover > ul,
+#cssmenu ul ul li:focus-within > ul {
+    display: block !important;
+}
+
+/* ================================================
+   LOGIN-ITEM
+   ================================================ */
+#cssmenu > ul > li.menu-login-item {
+    margin-left: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+#cssmenu > ul > li.menu-login-item > a.menu-login-link {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    height: 64px !important;
+    padding: 0 12px !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    background: #000000 !important;
+    text-decoration: none !important;
+    white-space: normal !important;
+    line-height: 1.4 !important;
+    border-radius: 0 !important;
+    text-transform: none !important;
+    gap: 3px !important;
+}
+
+#cssmenu > ul > li.menu-login-item > a.menu-login-link:hover {
+    color: #003366 !important;
+}
+
+#cssmenu > ul > li.menu-login-item > ul {
+    left: auto !important;
+    right: 0 !important;
+    min-width: 200px !important;
+}
+
+/* ================================================
+   TEAMLOGOS-BAR
+   ================================================ */
+.teamlogos-bar {
+    background: transparent !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1px !important;
+    min-height: 44px !important;
+    overflow-x: auto !important;
+}
+
+.teamlogos-bar .teamlogo {
+    height: 36px !important;
+    width: auto !important;
+    display: block !important;
+    transition: transform .2s !important;
+    margin: 0 !important;
+}
+
+.teamlogos-bar .teamlogo:hover {
+    transform: scale(1.12) rotate(-5deg) !important;
+    cursor: pointer !important;
+}
+
+/* ================================================
+   BANNER PROTEAM
+   ================================================ */
+.STHSPHPTeamHeader_Banner {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    height: 0 !important;
+    padding-bottom: 6.3% !important;
+    position: relative !important;
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.STHSPHPTeamHeader_Content {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* ================================================
+   TABMAIN MENÜ
+   ================================================ */
+.tabmain-links {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+    overflow-x: auto !important;
+    background: none !important;
+}
+
+.tabmain-links li {
+    margin-right: 1px !important;
+    display: flex !important;
+}
+
+.tabmain-links li a {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 6px 7px !important;
+    min-width: 69px !important;
+    min-height: 48px !important;
+    height: 48px !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    color: #fff !important;
+    background: #000 !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    border: 1px solid #707070 !important;
+    transition: background 0.2s !important;
+    font-family: 'Montserrat', Arial, sans-serif !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+}
+
+.tabmain-links li.activemain a {
+    background: #003366 !important;
+    color: #fff !important;
+}
+
+.tabmain-links li a:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+.tabmain-links li.bigbutton a {
+    min-width: 100px !important;
+    max-width: 180px !important;
+    height: 48px !important;
+    padding: 12px 18px !important;
+    font-size: 13px !important;
+}
+
+.tabmain-links li.bigbutton.farmteam a,
+.tabmain-links li.bigbutton.proteam a {
+    min-width: 60px !important;
+    max-width: 60px !important;
+    padding: 4px 6px !important;
+}
+
+/* ================================================
+   FARM/PRO LOGOS
+   ================================================ */
+.bigbutton.farmteam a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.farmteam-logo,
+.proteam-logo {
+    height: 36px !important;
+    max-height: 36px !important;
+    width: auto !important;
+    margin: 0 !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* ================================================
+   ARENA BILDER
+   ================================================ */
+.arena-small {
+    max-width: 80px !important;
+    max-height: 80px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: cover;
+    display: block;
+}
+
+.arena-hover-zoom {
+    transition: transform 0.27s cubic-bezier(.4,2.3,.3,1), box-shadow 0.27s;
+    z-index: 1;
+}
+
+.arena-hover-zoom:hover {
+    transform: scale(5.0);
+    box-shadow: 0 12px 44px 0 rgba(0,0,0,0.22);
+    position: relative;
+    z-index: 10;
+}
+
+/* ================================================
+   PROTEAM - RECHTE TABELLE (Desktop)
+   ================================================ */
+.STHSPHPTeam_HomeSecondaryTable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.STHSPHPTeam_HomeSecondaryTable td {
+    vertical-align: middle;
+    padding: 6px 8px;
+}
+
+.STHSPHPTeam_HomeSecondaryTable tr > td:first-child  { width: 90px; }
+.STHSPHPTeam_HomeSecondaryTable tr > td:nth-child(2) { width: 160px; text-align: left; }
+.STHSPHPTeam_HomeSecondaryTable tr > td:nth-child(3) { width: 130px; text-align: left; }
+
+table.STHSPHPTeam_HomeSecondaryTable td.STHSPHPTeamStat_TableTitle {
+    text-align: center !important;
+}
+
+.STHSPHPPlayerStat_HomeLeftTD {
+    border-left: 1px solid #dedede !important;
+    padding-left: 12px !important;
+}
+
+/* ================================================
+   GAME CENTER – Boxscore Link (Desktop)
+   ================================================ */
+.STHSPHPTeam_HomePrimaryTableBoxscoreLink {
+    text-align: center !important;
+    font-size: 12px !important;
+    margin-top: 5px !important;
+}
+
+.STHSPHPTeam_HomePrimaryTableBoxscoreLink a {
+    color: #000000 !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+}
+
+.STHSPHPTeam_HomePrimaryTableBoxscoreLink a:hover {
+    text-decoration: underline !important;
+}
+
+/* GAME CENTER – Team-Info Abstand reduzieren (Desktop) */
+.STHSPHPTeam_HomePrimaryTableTeamInfo {
+    padding: 8px 6px !important;  /* war: 25px */
+}
+
+/* ================================================
+   GAME CENTER – Aufklappmenü Header
+   ================================================ */
+.STHSPHPTeam_HomeTeamStatTable th {
+    color: #ffffff !important;
+}
+
+/* ================================================
+   TEAM LEADERS – Spielerbilder
+   ================================================ */
+.STHSPHPTeam_HomePrimaryTableLeadersHeadshot {
+    width: 72px !important;
+    height: 72px !important;
+    max-width: 72px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+}
+
+.STHSPHPTeam_HomePrimaryTableLeadersHeadshotTD {
+    width: 80px !important;
+    min-width: 80px !important;
+    max-width: 80px !important;
+    padding: 6px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.STHSPHPTeam_HomePrimaryTableLeadersTextTD {
+    vertical-align: middle !important;
+    padding: 6px 10px !important;
+    width: auto !important;
+}
+
+.STHSPHPTeam_HomePrimaryTableLeadersTextResult {
+    font-size: 36px !important;
+    line-height: 1.2 !important;
+    padding-left: 6px !important;
+}
+
+.STHSPHPTeam_HomePrimaryTableLeadersTextPlayer {
+    font-size: 14px !important;
+    padding-left: 6px !important;
+}
+
+/* ================================================
+   COLUMN SELECTOR DROPDOWN
+   ================================================ */
+.tablesorter_ColumnSelector {
+    background: #003366 !important;
+    color: #ffffff !important;
+    border-color: #003366 !important;
+    z-index: 100 !important;
+}
+
+.tablesorter_ColumnSelector label,
+.tablesorter_ColumnSelector label:nth-child(1) {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255,255,255,0.3) !important;
+}
+
+.tablesorter_ColumnSelector input[type="checkbox"] {
+    accent-color: #ffffff !important;
+}
+
+/* ================================================
+   INDEX - LAYOUT & PANELS
+   ================================================ */
+.STHSIndex_Score,
+.STHSIndex_NewsTD,
+.STHSIndex_Top5 {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    color: #000000;
+}
+
+.STHSTableFullW,
+.STHSIndex_GamesResult,
+.STHSIndex_HeadlineTable,
+.STHSIndex_Top5Table,
+.STHSIndex_Top20FreeAgents {
+    background: transparent;
+}
+
+.STHSIndex_GamesResult td,
+.STHSIndex_HeadlineTable td,
+.STHSIndex_Top5Table td,
+.STHSIndex_Top20FreeAgents td {
+    color: #000000;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.STHSIndex_TheNews {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    background: #000000;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.STHSIndex_GamesResult {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.STHSIndex_3StarNameHeader {
+    display: none !important;
+}
+
+/* ================================================
+   TEAMLOGOS IN SCORE-BOXEN
+   ================================================ */
+.STHSPHPIndexTeamImage {
+    height: 22px !important;
+    width: auto !important;
+    vertical-align: middle !important;
+    margin-right: 6px !important;
+    display: inline-block !important;
+}
+
+/* ================================================
+   NEWSBLOCK BILDER
+   ================================================ */
+.SI_NEWS_BLOCK img,
+.STHSIndex_NewsDiv img,
+.STHSIndex_NewsTD img {
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    object-fit: contain;
+    transition: transform 0.25s cubic-bezier(.4,2,.7,.4), box-shadow 0.2s;
+    cursor: zoom-in;
+}
+
+.SI_NEWS_BLOCK img:hover,
+.STHSIndex_NewsDiv img:hover,
+.STHSIndex_NewsTD img:hover {
+    transform: scale(2.50);
+    z-index: 10;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+}
+
+/* ================================================
+   LEAGUEINFORMATION
+   ================================================ */
+.STHSPHPLeagueInformationDiv {
+    font-size: 16px;
+    color: #222;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-family: 'Verdana', Arial, sans-serif;
+    line-height: 1.6;
+    box-shadow: 0 1px 7px rgba(0,0,0,0.05);
+}
+
+/* ================================================
+   GFHL LABEL
+   ================================================ */
+#gfhl-label {
+    display: none;
+}
+
+/* ================================================
+   STANDING TABLE
+   ================================================ */
+.STHSPHPStanding_Table,
+.STHSPHPStanding_Table thead,
+.STHSPHPStanding_Table tbody,
+.STHSPHPStanding_Table tr,
+.STHSPHPStanding_Table th,
+.STHSPHPStanding_Table td {
+    display: revert !important;
+}
+
+/* ================================================
+   LEADERS PREVIEW BOX
+   ================================================ */
+.leaders-preview {
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    min-height: 72px;
+}
+
+.leaders-preview-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.leaders-preview-headshot {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #ddd;
+    flex-shrink: 0;
+}
+
+.leaders-preview-info { flex: 1; min-width: 0; }
+
+.leaders-preview-cat {
+    font-size: 11px;
+    font-weight: 700;
+    color: #003366;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.leaders-preview-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.leaders-preview-team {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #555;
+    margin-top: 2px;
+}
+
+.leaders-preview-teamlogo { height: 16px; width: auto; }
+
+.leaders-preview-stat { text-align: right; flex-shrink: 0; }
+
+.leaders-preview-stat span {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1;
+}
+
+.leaders-preview-stat small {
+    font-size: 10px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.leaders-row { cursor: pointer; transition: background 0.15s; }
+
+.leaders-row td { color: #111111 !important; font-weight: 700 !important; }
+.leaders-row td a { color: #111111 !important; font-weight: 700 !important; text-decoration: none !important; }
+
+.leaders-row:hover td,
+.leaders-row.active td {
+    background: #003366 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.leaders-row:hover td a,
+.leaders-row.active td a { color: #ffffff !important; }
+
+.leaders-row:hover td img,
+.leaders-row.active td img { filter: brightness(10) !important; }
+
+/* ================================================
+   LEADERS GRID
+   ================================================ */
+.idx-leaders-grid,
+.idx-stars-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+}
+
+.idx-leaders-cell,
+.idx-stars-cell { min-width: 0 !important; }
+
+/* ================================================
+   SONSTIGES
+   ================================================ */
+.STHSPHPPlayerMugShot td { vertical-align: middle; font-size: 20px; }
+.STHSPHPPlayerReportHeadshot { border-radius: 50%; box-shadow: 0 0 10px #eee; }
+.STHSPHPReportTeamImage { height: 82px; width: auto; border-radius: 50%; box-shadow: 0 0 10px #eee; background: #fff; }
+
+/* ================================================
+   GLOBALE TABELLEN
+   ================================================ */
+.STHSPHPTeamStat_Table,
+.STHSPHPTeam_PlayersRosterTable,
+.STHSPHPTeam_GoaliesRosterTable,
+.STHSPHPTeam_PlayersScoringTable,
+.STHSPHPTeam_GoaliesScoringTable,
+.STHSPHPTeam_PlayerInfoTable,
+.STHSPHPTeam_ScheduleTable,
+.STHSPHPTeamsStatSub_Table,
+.STHSPHPTeamStatDepthChart_Table,
+.STHSPHPTeam_ProspectsTable,
+.STHSPHPTeam_CoachesTable,
+.STHSPHPTeam_TeamCareerStat,
+.STHSPHPStanding_Table,
+.tablesorter {
+    background-color: var(--table-bg) !important;
+    border-collapse: collapse !important;
+    color: var(--table-row-color) !important;
+}
+
+.STHSPHPTeamStat_Table th,
+.STHSPHPTeam_PlayersRosterTable th,
+.STHSPHPTeam_GoaliesRosterTable th,
+.STHSPHPTeam_PlayersScoringTable th,
+.STHSPHPTeam_GoaliesScoringTable th,
+.STHSPHPTeam_PlayerInfoTable th,
+.STHSPHPTeam_ScheduleTable th,
+.STHSPHPTeamsStatSub_Table th,
+.STHSPHPTeamStatDepthChart_Table th,
+.STHSPHPTeam_ProspectsTable th,
+.STHSPHPTeam_CoachesTable th,
+.STHSPHPTeam_TeamCareerStat th,
+.STHSPHPStanding_Table th,
+.tablesorter th {
+    background-color: var(--table-header-bg) !important;
+    color: var(--table-header-color) !important;
+    padding: 6px 8px !important;
+    border: 1px solid var(--table-border-color) !important;
+}
+
+.STHSPHPTeamStat_Table tbody tr:nth-child(odd) td,
+.STHSPHPTeam_PlayersRosterTable tbody tr:nth-child(odd) td,
+.STHSPHPTeam_GoaliesRosterTable tbody tr:nth-child(odd) td,
+.STHSPHPTeam_PlayersScoringTable tbody tr:nth-child(odd) td,
+.STHSPHPTeam_GoaliesScoringTable tbody tr:nth-child(odd) td,
+.STHSPHPTeam_PlayerInfoTable tbody tr:nth-child(odd) td,
+.STHSPHPTeam_ScheduleTable tbody tr:nth-child(odd) td,
+.STHSPHPTeamsStatSub_Table tbody tr:nth-child(odd) td,
+.STHSPHPTeam_ProspectsTable tbody tr:nth-child(odd) td,
+.STHSPHPTeam_CoachesTable tbody tr:nth-child(odd) td,
+.STHSPHPTeam_TeamCareerStat tbody tr:nth-child(odd) td,
+.STHSPHPStanding_Table tbody tr:nth-child(odd) td,
+.tablesorter tbody tr:nth-child(odd) td {
+    background-color: var(--table-row-odd-bg) !important;
+    color: var(--table-row-color) !important;
+}
+
+.STHSPHPTeamStat_Table tbody tr:nth-child(even) td,
+.STHSPHPTeam_PlayersRosterTable tbody tr:nth-child(even) td,
+.STHSPHPTeam_GoaliesRosterTable tbody tr:nth-child(even) td,
+.STHSPHPTeam_PlayersScoringTable tbody tr:nth-child(even) td,
+.STHSPHPTeam_GoaliesScoringTable tbody tr:nth-child(even) td,
+.STHSPHPTeam_PlayerInfoTable tbody tr:nth-child(even) td,
+.STHSPHPTeam_ScheduleTable tbody tr:nth-child(even) td,
+.STHSPHPTeamsStatSub_Table tbody tr:nth-child(even) td,
+.STHSPHPTeam_ProspectsTable tbody tr:nth-child(even) td,
+.STHSPHPTeam_CoachesTable tbody tr:nth-child(even) td,
+.STHSPHPTeam_TeamCareerStat tbody tr:nth-child(even) td,
+.STHSPHPStanding_Table tbody tr:nth-child(even) td,
+.tablesorter tbody tr:nth-child(even) td {
+    background-color: var(--table-row-even-bg) !important;
+    color: var(--table-row-color) !important;
+}
+
+.STHSPHPTeamStat_Table td,
+.STHSPHPTeam_PlayersRosterTable td,
+.STHSPHPTeam_GoaliesRosterTable td,
+.STHSPHPTeam_PlayersScoringTable td,
+.STHSPHPTeam_GoaliesScoringTable td,
+.STHSPHPTeam_PlayerInfoTable td,
+.STHSPHPTeam_ScheduleTable td,
+.STHSPHPTeamsStatSub_Table td,
+.STHSPHPTeam_ProspectsTable td,
+.STHSPHPTeam_CoachesTable td,
+.STHSPHPTeam_TeamCareerStat td,
+.STHSPHPStanding_Table td,
+.tablesorter td {
+    border: 1px solid var(--table-border-color) !important;
+    padding: 5px 8px !important;
+}
+
+.STHSPHPTeamStat_Table td a,
+.tablesorter td a {
+    color: var(--table-row-color) !important;
+}
+
+.tablesorter tbody.tablesorter-no-sort tr th,
+.tablesorter tbody.tablesorter-no-sort tr td {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+    padding: 5px 8px !important;
+}
+
+/* ================================================
+   PROTEAM - RECHTE TABELLE Logo-TD (Desktop)
+   ================================================ */
+
+/* Logo-TD: Breite und vertikale Ausrichtung */
+.STHSPHPTeam_HomeSecondaryTable tr > td:first-child {
+    width: 90px;
+    vertical-align: middle;
+}
+
+/* Logos: groß und zentriert (Desktop) */
+.STHSPHPTeam_HomeSecondaryTable img.STHSPHPTeamStatImage,
+.STHSPHPTeam_HomeSecondaryTable img.farmteam-logo-img {
+    height: 64px !important;
+    width: auto !important;
+    display: block !important;
+    margin: 0 auto !important;       /* ← zentriert */
+}
+
+/* ================================================
+   SCHEDULE ÜBERSCHRIFT
+   ================================================ */
+
+   
+/* Schedule – Tabellenüberschrift */
+.STHSPHPSchedule_ScheduleTable thead th {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* Schedule – Header text-shadow entfernen, Pfeile weiß */
+.STHSPHPSchedule_ScheduleTable thead th {
+    text-shadow: none !important;
+}
+
+/* Tablesorter Sortierpfeile auf schwarzem Hintergrund */
+.STHSPHPSchedule_ScheduleTable thead th.tablesorter-header:after,
+.STHSPHPSchedule_ScheduleTable thead th .tablesorter-icon {
+    color: #ffffff !important;
+    opacity: 0.7;
+}
+
+/* ================================================
+   STANDING ÜBERSCHRIFT
+   ================================================ */
+
+   /* Standing – Tabellenüberschrift schwarz/weiß */
+.STHSPHPStanding_Table thead th {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* ================================================
+   LINES USW. ÜBERSCHRIFT
+   ================================================ */
+
+   /* ProTeam / FarmTeam – Lines: 1. Zeile (Abschnittstitel) schwarz/weiß */
+.STHSPHPTeamStat_Table tr:first-child th {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* ================================================
+   ROSTER USW. ZEILENABSTAND
+   ================================================ */
+
+/* 2d: Roster – Zeilen 3-7 etwas mehr Zeilenabstand */
+.STHSPHPTeam_PlayersRosterTable tbody tr:nth-child(n+3):nth-child(-n+7) td {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+
+/* 2e: PlayerInfo – Zeilen 3-7 etwas mehr Zeilenabstand */
+.STHSPHPTeam_PlayerInfoTable tbody tr:nth-child(n+3):nth-child(-n+7) td {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+
+/* 2d + 2e: Roster & PlayerInfo – mehr horizontaler Spaltenabstand */
+table.STHSPHPTeam_PlayersRosterTable > tbody > tr > td,
+table.STHSPHPTeam_PlayersRosterTable > thead > tr > th {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+}
+
+table.STHSPHPTeam_PlayerInfoTable > tbody > tr > td,
+table.STHSPHPTeam_PlayerInfoTable > thead > tr > th {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+}
+
+/* =====================================================
+   ProTeam Home Tab – Spaltenbreite einstellbar
+   Ändere --layout-left nach Wunsch:
+   Optionen: 66% (2/3), 60% (3/5), 70% (7/10) usw.
+   ===================================================== */
+:root {
+    --layout-left: 75%;   /* ← HIER anpassen! */
+}
+
+.STHSPHPPlayerStat_HomeMainTD {
+    width: var(--layout-left) !important;
+    vertical-align: top !important;
+}
+
+.STHSPHPPlayerStat_HomeLeftTD {
+    width: calc(100% - var(--layout-left)) !important;
+    vertical-align: top !important;
+}
+
+
+/* =====================================================
+   1) PlayerReport – neuer 3-Zeilen Header
+   ===================================================== */
+
+/* ZEILE 1 */
+.pr-header-row1 {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    background: var(--table-bg);
+    border-bottom: 2px solid var(--table-border-color);
+}
+
+.pr-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap;
+}
+
+.pr-teamlogo {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.pr-divider {
+    width: 2px;
+    height: 36px;
+    background: #cccccc;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pr-playername {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+
+.pr-position {
+    font-size: 22px;
+    font-weight: 700;
+    color: #444;
+}
+
+.pr-ov {
+    font-size: 16px;
+    color: #555;
+}
+
+.pr-ov strong {
+    font-size: 20px;
+    color: #111;
+}
+
+.pr-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* Dropdown */
+.pr-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pr-dropdown-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.pr-dropdown-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #fff;
+    min-width: 200px;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.pr-dropdown-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+}
+
+.pr-dropdown-arrow {
+    font-size: 12px;
+    color: #888;
+}
+
+.pr-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    min-width: 220px;
+    max-height: 260px;
+    overflow-y: auto;
+    z-index: 200;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.pr-dropdown-content a {
+    display: block;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: #111;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.pr-dropdown-content a:hover {
+    background: #f5f5f5;
+}
+
+.pr-dropdown:hover .pr-dropdown-content {
+    display: block;
+}
+
+/* ZEILE 2: Banner */
+.pr-banner {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    line-height: 0;  /* ← verhindert kleinen Spalt unter dem img */
+    padding: 0 !important;
+    background: none !important;
+}
+
+.pr-banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ZEILE 3: Spielerbild + Stats */
+.pr-stats-row {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;        /* ← war flex-start, jetzt center */
+    background: #f8f8f8;
+    border-bottom: 2px solid var(--table-border-color);
+    padding: 16px 20px;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+.pr-headshot-col {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.pr-headshot {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border: 3px solid #fff;
+}
+
+.pr-stats-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+}
+
+/* Stats – Spalten ausgerichtet */
+.pr-stats-block {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.pr-stats-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #444;
+    width: 130px;              /* ← feste Breite statt min-width */
+    min-width: 130px;
+    text-align: right;
+    padding-right: 20px;
+    flex-shrink: 0;
+    white-space: nowrap;       /* ← kein Umbruch! */
+    line-height: 0;
+}
+
+.pr-stats-numbers {
+    display: flex;
+    gap: 0;
+    align-items: flex-end;     /* ← Key oben, Val unten – sieht besser aus */
+}
+
+.pr-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    flex-shrink: 0;
+}
+
+.pr-stat-key {
+    font-size: 11px;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+.pr-stat-val {
+    font-size: 26px;
+    font-weight: 900;
+    color: #111;
+    line-height: 1.1;
+}
+
+/* ---- PlayerReport Mobile ---- */
+@media screen and (max-width: 768px) {
+
+    /* Header Row 1 */
+    .pr-header-row1 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px 12px;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .pr-header-left {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .pr-playername { font-size: 20px; }
+    .pr-position   { font-size: 16px; }
+    .pr-ov         { font-size: 13px; }
+
+    .pr-divider {
+        height: 24px;
+    }
+
+    /* Dropdown volle Breite */
+    .pr-header-right {
+        width: 100%;
+    }
+    .pr-dropdown {
+        width: 100%;
+    }
+    .pr-dropdown-box {
+        width: 100%;
+        min-width: unset;
+        box-sizing: border-box;
+    }
+
+    /* Banner */
+    .pr-banner {
+        width: 100% !important;
+    }
+
+    /* Stats Row: Spielerbild links, Stats rechts */
+    .pr-stats-row {
+        width: 100% !important;
+        flex-direction: row;       /* ← NICHT column – Bild links, Stats rechts */
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        padding: 10px 12px;
+        gap: 12px;
+        box-sizing: border-box;
+    }
+
+    .pr-headshot-col {
+        flex-shrink: 0;
+    }
+
+    .pr-headshot {
+        width: 72px;
+        height: 72px;
+    }
+
+    .pr-stats-col {
+        flex: 1;
+        min-width: 0;
+        gap: 10px;
+    }
+
+    /* Stats Block: Label oben, Zahlen drunter */
+    .pr-stats-block {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .pr-stats-label {
+        width: auto;
+        min-width: unset;
+        text-align: left;
+        padding-right: 0;
+        font-size: 11px;
+        white-space: nowrap;
+        line-height: 1.4;        /* ← war 0, das war das Problem! */
+    }
+
+    /* Stats-Zahlen: alle 5 nebeneinander, kleiner */
+    .pr-stats-numbers {
+        gap: 0;
+        flex-wrap: nowrap;       /* ← alle 5 in einer Reihe */
+        width: 100%;
+    }
+
+    .pr-stat-item {
+        width: auto;
+        flex: 1;                 /* ← gleichmäßig verteilen */
+        min-width: 0;
+    }
+
+    .pr-stat-key {
+        font-size: 9px;
+    }
+
+    .pr-stat-val {
+        font-size: 18px;
+    }
+
+    /* Wrapper: volle Breite, kein overflow */
+    .STHSPHPPlayerStat_PlayerNameHeader,
+    .STHSPHPPlayerStat_Main {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* PlayerReport – komplette Seite auf 1200px */
+.STHSPHPPlayerStat_PlayerNameHeader,
+.STHSPHPPlayerStat_Main {
+    width: 1200px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* Banner – echte Bildgröße */
+.pr-banner {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    line-height: 0;
+}
+
+.pr-banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ================================================
+   PLAYERSINFO – fixierte Spalten beim Scrollen
+   ================================================ */
+
+/* Spalte 1: Spielername */
+.STHSPHPAllPlayerInformation_Table thead tr th:nth-child(1),
+.STHSPHPAllPlayerInformation_Table tbody tr td:nth-child(1) {
+    position: sticky !important;
+    left: 0 !important;
+    z-index: 2 !important;
+    background-color: #ffffff !important;
+    min-width: 140px !important;
+}
+
+/* Spalte 2: Teamname */
+.STHSPHPAllPlayerInformation_Table thead tr th:nth-child(2),
+.STHSPHPAllPlayerInformation_Table tbody tr td:nth-child(2) {
+    position: sticky !important;
+    left: 140px !important;
+    z-index: 2 !important;
+    background-color: #ffffff !important;
+    min-width: 140px !important;
+}
+
+/* Ungerade Zeilen */
+.STHSPHPAllPlayerInformation_Table tbody tr:nth-child(odd) td:nth-child(1),
+.STHSPHPAllPlayerInformation_Table tbody tr:nth-child(odd) td:nth-child(2) {
+    background-color: #ffffff !important;
+}
+
+/* Gerade Zeilen */
+.STHSPHPAllPlayerInformation_Table tbody tr:nth-child(even) td:nth-child(1),
+.STHSPHPAllPlayerInformation_Table tbody tr:nth-child(even) td:nth-child(2) {
+    background-color: #f0f0f0 !important;
+}
+
+/* Header fixieren */
+.STHSPHPAllPlayerInformation_Table thead tr:nth-child(1) th {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3 !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* Ecken oben-links */
+.STHSPHPAllPlayerInformation_Table thead tr:nth-child(1) th:nth-child(1),
+.STHSPHPAllPlayerInformation_Table thead tr:nth-child(1) th:nth-child(2) {
+    z-index: 4 !important;
+    background-color: #000000 !important;
+}
+
+/* ================================================
+   FINANCE – fixierte Spalten beim Scrollen
+   ================================================ */
+
+/* Spalte 1: # */
+.STHSPHPFinance_Table thead tr th:nth-child(1),
+.STHSPHPFinance_Table tbody tr td:nth-child(1) {
+    position: sticky !important;
+    left: 0 !important;
+    z-index: 2 !important;
+    background-color: inherit !important;
+    min-width: 10px !important;
+}
+
+/* Spalte 2: Team-Name */
+.STHSPHPFinance_Table thead tr th:nth-child(2),
+.STHSPHPFinance_Table tbody tr td:nth-child(2) {
+    position: sticky !important;
+    left: 10px !important;
+    z-index: 2 !important;
+    background-color: inherit !important;
+    min-width: 200px !important;
+}
+
+/* Ungerade Zeilen */
+.STHSPHPFinance_Table tbody tr:nth-child(odd) td:nth-child(1),
+.STHSPHPFinance_Table tbody tr:nth-child(odd) td:nth-child(2) {
+    background-color: #ffffff !important;
+}
+
+/* Gerade Zeilen */
+.STHSPHPFinance_Table tbody tr:nth-child(even) td:nth-child(1),
+.STHSPHPFinance_Table tbody tr:nth-child(even) td:nth-child(2) {
+    background-color: #f0f0f0 !important;
+}
+
+/* Header-Zeile 1: Gruppierung */
+.STHSPHPFinance_Table thead tr:nth-child(1) th {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3 !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* Header-Zeile 2: Spaltentitel */
+.STHSPHPFinance_Table thead tr:nth-child(2) th {
+    position: sticky !important;
+    top: 24px !important;
+    z-index: 3 !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+/* Ecken oben-links */
+.STHSPHPFinance_Table thead tr:nth-child(1) th:nth-child(1),
+.STHSPHPFinance_Table thead tr:nth-child(1) th:nth-child(2),
+.STHSPHPFinance_Table thead tr:nth-child(2) th:nth-child(1),
+.STHSPHPFinance_Table thead tr:nth-child(2) th:nth-child(2) {
+    z-index: 4 !important;
+    background-color: #000000 !important;
+}
+
+/* Finance – thead immer über allem */
+.STHSPHPFinance_Table thead {
+    position: relative !important;
+    z-index: 5 !important;
+}
+
+.STHSPHPFinance_Table thead tr:nth-child(1) th {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+.STHSPHPFinance_Table thead tr:nth-child(2) th {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+
+
+
+
+/* ============================================================================================================================================
+===============================================================================================================================================*/
+
+/* ================================================
+   MOBILE (max-width: 768px)
+   ================================================ */
+@media (max-width: 768px) {
+
+    /* --- Teamlogos in Score-Boxen --- */
+    .STHSPHPIndexTeamImage {
+        display: inline-block !important;
+        height: 18px !important;
+    }
+
+    /* --- Leaders Grid: untereinander --- */
+    .idx-leaders-grid,
+    .idx-stars-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- Standing Table: horizontal scrollbar --- */
+    .STHSPHPStanding_Table {
+        table-layout: fixed !important;
+        min-width: 1400px !important;
+        width: 100%;
+    }
+
+    .STHSPHPStanding_Table th,
+    .STHSPHPStanding_Table td {
+        white-space: nowrap !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 13px;
+        text-align: center;
+        border: 1px solid #eee;
+        padding: 4px 6px;
+        box-sizing: border-box;
+    }
+
+    .STHSPHPStanding_Table th:nth-child(2),
+    .STHSPHPStanding_Table td:nth-child(2) {
+        min-width: 110px;
+        max-width: 220px;
+        text-align: left;
+    }
+
+    .STHSPHPStanding_Table th:first-child,
+    .STHSPHPStanding_Table td:first-child {
+        min-width: 25px;
+        max-width: 35px;
+    }
+
+    /* --- Data-Tabellen: horizontal scrollbar --- */
+    .STHSPHPTeam_ScheduleTable,
+    .STHSPHPTeamsStatSub_Table,
+    .STHSPHPTeam_PlayersScoringTable,
+    .STHSPHPTeam_GoaliesScoringTable,
+    .STHSPHPTeam_PlayersRosterTable,
+    .STHSPHPTeam_GoaliesRosterTable,
+    .STHSPHPTeam_PlayerInfoTable {
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        width: 100% !important;
+    }
+
+    .STHSPHPTeam_ScheduleTable thead,
+    .STHSPHPTeam_ScheduleTable tbody,
+    .STHSPHPTeam_ScheduleTable tr,
+    .STHSPHPTeam_ScheduleTable th,
+    .STHSPHPTeam_ScheduleTable td,
+    .STHSPHPTeamsStatSub_Table thead,
+    .STHSPHPTeamsStatSub_Table tbody,
+    .STHSPHPTeamsStatSub_Table tr,
+    .STHSPHPTeamsStatSub_Table th,
+    .STHSPHPTeamsStatSub_Table td,
+    .STHSPHPTeam_PlayersScoringTable thead,
+    .STHSPHPTeam_PlayersScoringTable tbody,
+    .STHSPHPTeam_PlayersScoringTable tr,
+    .STHSPHPTeam_PlayersScoringTable th,
+    .STHSPHPTeam_PlayersScoringTable td {
+        display: revert !important;
+    }
+
+    /* --- Banner höher --- */
+    .STHSPHPTeamHeader_Banner {
+        padding-bottom: 22% !important;
+    }
+
+    .STHSPHPTeamHeader_TeamName {
+        font-size: 18px !important;
+        line-height: 1.2 !important;
+    }
+
+    .STHSPHPTeamHeader_Stats {
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+    }
+
+    /* --- Tab-Menü umbrechen --- */
+    .tabmain-links {
+        flex-wrap: wrap !important;
+        justify-content: flex-start !important;
+        gap: 2px !important;
+        padding: 2px !important;
+        overflow-x: unset !important;
+    }
+
+    .tabmain-links li a {
+        min-width: 58px !important;
+        max-width: 90px !important;
+        height: auto !important;
+        min-height: 38px !important;
+        font-size: 9px !important;
+        padding: 4px !important;
+    }
+
+    .tabmain-links li.bigbutton.farmteam a,
+    .tabmain-links li.bigbutton.proteam a,
+    .tabmain-links li.bigbutton a {
+        min-width: 58px !important;
+        max-width: 58px !important;
+        height: auto !important;
+        min-height: 38px !important;
+        padding: 4px !important;
+    }
+
+    .farmteam-logo,
+    .proteam-logo {
+        height: 28px !important;
+        max-height: 28px !important;
+    }
+
+    /* --- Home Tab: Game Center + Team Info untereinander --- */
+    .STHSPHPTeam_HomeTable,
+    .STHSPHPTeam_HomeTable > tbody {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .STHSPHPTeam_HomeTable > tbody > tr {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .STHSPHPPlayerStat_HomeMainTD,
+    .STHSPHPPlayerStat_HomeLeftTD {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border-left: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* --- Game Center: Tabelle bleibt echte Tabelle --- */
+    .STHSPHPTeam_HomePrimaryTable {
+        display: table !important;
+        width: 100% !important;
+        table-layout: auto !important;
+        border-collapse: collapse !important;
+        margin-bottom: 8px !important;
+    }
+
+    .STHSPHPTeam_HomePrimaryTable tbody { display: table-row-group !important; }
+    .STHSPHPTeam_HomePrimaryTable tr    { display: table-row !important; }
+    .STHSPHPTeam_HomePrimaryTable td    { display: table-cell !important; vertical-align: middle !important; }
+
+    .STHSPHPTeam_HomePrimaryTableTeamImageSpec { height: 32px !important; width: auto !important; }
+    .STHSPHPTeam_HomePrimaryTableTeamScore     { font-size: 28px !important; font-weight: 900 !important; width: 44px !important; padding: 0 4px !important; text-align: center !important; }
+    .STHSPHPTeam_HomePrimaryTableTeamName      { font-size: 12px !important; font-weight: 700 !important; }
+    .STHSPHPTeam_HomePrimaryTableTeamInfo      { font-size: 11px !important; padding: 4px 6px !important; }
+
+    /* FINAL / Datum: Text oben, Boxscore drunter */
+    .STHSPHPTeam_HomePrimaryTableTeamMiddlePlay,
+    .STHSPHPTeam_HomePrimaryTableTeamMiddleNotPlay {
+        font-size: 10px !important;
+        text-align: center !important;
+        width: 60px !important;
+        padding: 2px !important;
+        vertical-align: middle !important;
+    }
+
+    .STHSPHPTeam_HomePrimaryTableTeamInfoBeforeTriangle {
+        font-size: 10px !important;
+        font-weight: 700 !important;
+        display: block !important;
+        margin-bottom: 4px !important;
+    }
+
+    .STHSPHPTeam_HomePrimaryTableTeamInfoTriangle { display: none !important; }
+
+    .STHSPHPTeam_HomeTeamStatTable     { display: none !important; }
+
+    .STHSPHPTeam_HomePrimaryTableBoxscoreLink {
+        display: block !important;
+        text-align: center !important;
+        padding: 0 !important;
+        margin-top: 2px !important;
+    }
+
+    .STHSPHPTeam_HomePrimaryTableBoxscoreLink a {
+        display: inline-block !important;
+        font-size: 10px !important;
+        font-weight: 700 !important;
+        color: #000000 !important;
+        text-decoration: none !important;
+        border: 0px solid #003366 !important;
+        border-radius: 3px !important;
+        padding: 2px 6px !important;
+    }
+
+    /* --- Secondary Table (Team Info etc.) --- */
+
+    .STHSPHPTeam_HomeSecondaryTable {
+        width: 100% !important;
+        table-layout: auto !important;
+        margin-bottom: 12px !important;
+    }
+
+    .STHSPHPTeam_HomeSecondaryTable td {
+        display: table-cell !important;
+        vertical-align: middle !important;
+    }
+
+    .STHSPHPTeam_HomeSecondaryTable td[rowspan] {
+        width: 50px !important;
+        min-width: 0 !important;
+        max-width: 50px !important;
+        padding: 4px !important;
+        overflow: hidden !important;
+        vertical-align: top !important;
+    }
+
+    .STHSPHPTeam_HomeSecondaryTable td[rowspan] img {
+        display: none !important;
+        height: 0 !important;
+        width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Farmlogo sichtbar lassen */
+    .STHSPHPTeam_HomeSecondaryTable td[rowspan] img.farmteam-logo-img {
+        display: block !important;
+        height: 44px !important;
+        width: auto !important;
+    }
+
+    /* TD mit Farmlogo → sichtbare Breite */
+    .STHSPHPTeam_HomeSecondaryTable td[rowspan]:has(img.farmteam-logo-img) {
+        width: 55px !important;
+        max-width: 55px !important;
+        overflow: visible !important;
+        padding: 6px !important;
+    }
+
+    /* TD mit Deko-Bildern → Breite 0 */
+    .STHSPHPTeam_HomeSecondaryTable td[rowspan]:not(:has(img.STHSPHPTeamStatImage)) {
+        width: 0 !important;
+        max-width: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+
+    /* Label-TD */
+    .STHSPHPTeam_HomeSecondaryTable tr > td:nth-child(1):not([rowspan]),
+    .STHSPHPTeam_HomeSecondaryTable tr > td:nth-child(2):not([rowspan]) {
+        width: 90px !important;
+        min-width: 90px !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        color: #555555 !important;
+        padding: 5px 6px !important;
+        white-space: normal !important;      /* ← statt nowrap – damit umbricht es */
+        vertical-align: middle !important;   /* ← auf gleiche Höhe wie Wert */
+    }
+
+    /* Wert-TD */
+    .STHSPHPTeam_HomeSecondaryTable tr > td:last-child:not([rowspan]) {
+        display: table-cell !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        color: #111111 !important;
+        padding: 5px 6px !important;
+        width: auto !important;
+        min-width: 100px !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+
+    .STHSPHPTeam_HomeSecondaryTable tr {
+        border-bottom: 1px solid #f0f0f0 !important;
+    }
+
+    .STHSPHPTeam_HomeSecondaryTable .STHSPHPTeamStat_TableTitle,
+    table.STHSPHPTeam_HomeSecondaryTable td.STHSPHPTeamStat_TableTitle {
+        background-color: transparent !important;
+        color: #000000 !important;
+        font-size: 14px !important;
+        font-weight: 900 !important;
+        padding: 10px 0 4px 0 !important;
+        text-align: left !important;
+        border-bottom: 2px solid #000000 !important;
+    }
+
+    /* Index: Tabellen untereinander */
+    table.STHSIndex_Main,
+    table.STHSIndex_Main tr,
+    table.STHSIndex_Main td {
+        display: block;
+        width: 100% !important;
+        margin-bottom: 18px;
+    }
+
+    .STHSIndex_GamesResult th,
+    .STHSIndex_GamesResult td {
+        font-size: 14px;
+        padding: 8px 12px;
+        border-bottom: 1px solid #ffffff;
+    }
+
+    .STHSIndex_GamesResult th       { text-align: left; }
+    .STHSIndex_GamesResult td:last-child { text-align: right; }
+    .STHSPHPIndexBoxScore { text-align: right !important; padding-top: 5px; }
+
+    .STHSIndex_GamesResult tr:nth-child(1) {
+        display: flex; flex-direction: row; align-items: center; gap: 8px; width: 100%; margin-bottom: 0;
+    }
+
+    .STHSIndex_GamesResult tr:nth-child(2),
+    .STHSIndex_GamesResult tr:nth-child(3) {
+        display: flex; flex-direction: row; align-items: center; justify-content: space-between; width: 100%; gap: 8px;
+    }
+
+    .STHSIndex_GamesResult tr:nth-child(4) { display: block; width: 100%; }
+
+    .STHSIndex_GamesResult th,
+    .STHSIndex_GamesResult td:not(.STHSRight):not(.STHSPHPIndexBoxScore) {
+        flex: 1 1 0; text-align: left; padding: 8px 8px;
+    }
+
+    .STHSIndex_GamesResult th.STHSW45,
+    .STHSIndex_GamesResult td.STHSRight {
+        flex: 0 0 50px; text-align: right; padding: 8px 8px;
+    }
+
+    .STHSIndex_GamesResult td.STHSPHPIndexBoxScore {
+        width: 100%; text-align: left !important; padding-left: 0;
+    }
+}
+
+    .STHSPHPTeam_HomeSecondaryTable td[rowspan]:has(img.STHSPHPTeamStatImage),
+    .STHSPHPTeam_HomeSecondaryTable td[rowspan]:has(img.farmteam-logo-img) {
+        width: 45px !important;
+        max-width: 45px !important;
+        overflow: visible !important;
+        padding: 4px !important;
+        vertical-align: top !important;
+    }
+
+    .STHSPHPTeam_HomeSecondaryTable td[rowspan]:has(img.STHSPHPTeamStatImage),
+    .STHSPHPTeam_HomeSecondaryTable td[rowspan]:has(img.farmteam-logo-img) {
+        width: 55px !important;
+        max-width: 55px !important;
+        overflow: visible !important;
+        padding: 4px !important;
+        vertical-align: middle !important;  /* ← nicht top! */
+    }
+
+
+
+/* ================================================
+   MOBILES MENÜ
+   ================================================ */
+@media all and (max-width: 768px),
+only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px),
+only screen and (min-resolution: 192dpi) and (max-width: 1024px) {
+
+    #cssmenu { width: 100% !important; max-width: 100% !important; }
+
+    #cssmenu > ul {
+        display: none !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        justify-content: flex-start !important;
+    }
+
+    #cssmenu > ul.open,
+    #cssmenu.open > ul { display: flex !important; }
+
+    #cssmenu > ul > li {
+        display: block !important;
+        width: 100% !important;
+        border-top: 1px solid rgba(120,120,120,0.2) !important;
+        flex-shrink: unset !important;
+    }
+
+    #cssmenu > ul > li > a {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 46px !important;
+        padding: 14px 17px !important;
+        display: block !important;
+        white-space: normal !important;
+        text-align: left !important;
+        font-size: 14px !important;
+        justify-content: flex-start !important;
+    }
+
+    #cssmenu > ul > li > a.MenuAfterImage,
+    #cssmenu > ul > li:nth-child(8) > a {
+        width: 100% !important;
+        white-space: normal !important;
+        text-align: left !important;
+        padding: 14px 17px !important;
+    }
+
+    #cssmenu ul ul,
+    #cssmenu ul ul ul {
+        position: relative !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        min-width: unset !important;
+        box-shadow: none !important;
+    }
+
+    #cssmenu ul ul li a { padding-left: 25px !important; white-space: normal !important; }
+    #cssmenu ul ul ul li a { padding-left: 35px !important; }
+
+    #cssmenu #menu-button {
+        display: block !important;
+        padding: 17px !important;
+        color: #ffffff !important;
+        background: #000000 !important;
+        cursor: pointer !important;
+        font-size: 15px !important;
+        text-transform: uppercase !important;
+        font-weight: 700 !important;
+    }
+
+    #cssmenu #menu-button:after {
+        position: absolute !important; top: 22px !important; right: 17px !important;
+        display: block !important; height: 4px !important; width: 20px !important;
+        border-top: 2px solid #ffffff !important; border-bottom: 2px solid #ffffff !important;
+        content: '' !important;
+    }
+
+    #cssmenu #menu-button:before {
+        position: absolute !important; top: 16px !important; right: 17px !important;
+        display: block !important; height: 2px !important; width: 20px !important;
+        background: #ffffff !important; content: '' !important;
+    }
+
+    .MenuImageDiv, #STHSImageHeader { display: none !important; }
+    .MenuImageDiv, #MenuProLeagueImage, #MenuFarmLeagueImage, #MenuLeagueImage { display: none !important; }
+
+    #cssmenu > ul > li > a.menu-home { font-size: 24px !important; padding: 10px 17px !important; }
+
+    #cssmenu .submenu-button {
+        position: absolute !important; z-index: 99 !important; right: 0 !important; top: 0 !important;
+        display: block !important; border-left: 1px solid rgba(120,120,120,0.2) !important;
+        height: 46px !important; width: 46px !important; cursor: pointer !important;
+    }
+
+    #cssmenu .submenu-button:after {
+        position: absolute !important; top: 22px !important; right: 19px !important;
+        width: 8px !important; height: 2px !important; display: block !important;
+        background: #ffffff !important; content: '' !important;
+    }
+
+    #cssmenu .submenu-button:before {
+        position: absolute !important; top: 19px !important; right: 22px !important;
+        display: block !important; width: 2px !important; height: 8px !important;
+        background: #ffffff !important; content: '' !important;
+    }
+
+    #cssmenu .submenu-button.submenu-opened:before { display: none !important; }
+}
+
+/* ============================================================
+   FIX 1: pr-stat-item Mindestbreite – verhindert GAA/SV%-Kleben
+   ============================================================ */
+.pr-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    min-width: 70px;
+    flex-shrink: 0;
+}
+
+/* Gap zwischen den einzelnen Stat-Spalten (GP, G, A, P, +/-) */
+.pr-stats-numbers {
+    display: flex;
+    gap: 8px;          /* ← NEU: Abstand zwischen den Stat-Säulen */
+    align-items: flex-end;
+}
+
+/* ============================================================
+   FIX 2: STHSPHPPlayerStat_Table bleibt auf Mobile eine echte
+           Tabelle (verhindert das Untereinander-Stapeln der
+           Header- und Datenspalten)
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* Jede STHSPHPPlayerStat_Table bekommt einen Scroll-Wrapper */
+    .STHSPHPPlayerStat_Table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;  /* iOS-Momentum-Scroll */
+        overscroll-behavior-x: contain !important;     /* verhindert Page-Scroll */
+    }
+
+    /* Die table selbst muss echter table bleiben */
+    .STHSPHPPlayerStat_Table table {
+        display: table !important;
+    }
+
+    /* Alle internen Elemente als echte Tabellen-Elemente */
+    .STHSPHPPlayerStat_Table thead,
+    .STHSPHPPlayerStat_Table tbody,
+    .STHSPHPPlayerStat_Table tfoot {
+        display: table-row-group !important;
+    }
+
+    .STHSPHPPlayerStat_Table tr {
+        display: table-row !important;
+    }
+
+    .STHSPHPPlayerStat_Table th,
+    .STHSPHPPlayerStat_Table td {
+        display: table-cell !important;
+        white-space: nowrap !important;
+        padding: 4px 8px !important;
+        font-size: 11px !important;
+    }
+
+    /* Kein max-width / overflow: hidden auf übergeordneten Containern */
+    .STHSPHPPlayerStat_Main,
+    .STHSPHPPlayerStat_PlayerNameHeader,
+    .tabmain,
+    .STHSPHPPlayerStat_Tabmain-content {
+        overflow-x: visible !important;   /* ← kein hidden, sonst blockt's */
+        overflow: visible !important;
+    }
+
+    /* pr-stats-row – auf Mobile untereinander, kein Überlauf */
+    .pr-stats-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        overflow-x: hidden !important;
+    }
+
+    .pr-stats-numbers {
+        gap: 4px !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .pr-stat-item {
+        min-width: 56px !important;
+        width: 56px !important;
+    }
+
+    .pr-stat-val {
+        font-size: 20px !important;
+    }
+
+    .pr-stat-key {
+        font-size: 10px !important;
+    }
+}
+
